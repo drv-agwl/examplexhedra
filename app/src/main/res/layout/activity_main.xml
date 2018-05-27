@@ -8,21 +8,23 @@
     tools:context="xhedra.test2.MainActivity">
 
     <Button
+        android:id="@+id/mr"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_weight="1"
-        android:text="Marathi" />
+        android:text="@string/marathi" />
 
     <Button
+        android:id="@+id/hi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Hindi" />
+        android:text="@string/hindi" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/en"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_weight="1"
-        android:text="English" />
+        android:text="@string/english" />
 </LinearLayout>
