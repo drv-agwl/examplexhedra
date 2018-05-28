@@ -26,6 +26,7 @@
             android:text="FAQ"/>
 
         <Button
+            android:onClick="Rep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/reply"
