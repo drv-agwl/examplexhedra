@@ -3,4 +3,5 @@
     <string name="marathi">Marathi</string>
     <string name="hindi">Hindi</string>
     <string name="english">English</string>
+    <string name="login">Login</string>
 </resources>
