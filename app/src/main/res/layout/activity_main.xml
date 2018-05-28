@@ -7,24 +7,69 @@
     android:orientation="vertical"
     tools:context="xhedra.test2.MainActivity">
 
-    <Button
-        android:id="@+id/mr"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        android:text="@string/marathi" />
-
-    <Button
-        android:id="@+id/hi"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/hindi" />
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/en"
+        <Button
+            android:id="@+id/mr"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:text="@string/marathi" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/marathi"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="@string/marathi" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        android:text="@string/english" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/hi"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hindi" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hin"
+            android:textAlignment="center"
+            android:text="@string/hindi"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/en"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:text="@string/english" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/eng"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/english"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>
