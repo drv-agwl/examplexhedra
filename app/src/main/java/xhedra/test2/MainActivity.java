@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         loc_mr = findViewById(R.id.mr);
         loc_hi = findViewById(R.id.hi);
         loc_en = findViewById(R.id.en);
-        final String loc = Locale.getDefault().toString();
+
 
         loc_en.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
             public void onClick(View v) {
                 String english = eng.getText().toString();
                 speak(english); // text to speech of the text view
-                setLocale(loc);
+                setLocale("en");
             }
         });
 
