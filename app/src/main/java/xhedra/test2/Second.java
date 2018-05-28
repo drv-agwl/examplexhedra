@@ -3,11 +3,11 @@ package xhedra.test2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AudioUpload extends AppCompatActivity {
+public class Second extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_audio_upload);
+        setContentView(R.layout.activity_second);
     }
 }

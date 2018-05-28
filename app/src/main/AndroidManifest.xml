@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login" />
-        <activity android:name=".AudioUpload"></activity>
+        <activity android:name=".NewQuery" />
+        <activity android:name=".Second" />
     </application>
 
 </manifest>
