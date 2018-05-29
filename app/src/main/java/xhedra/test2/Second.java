@@ -16,4 +16,7 @@ public class Second extends AppCompatActivity {
     public void Rep(View view) {
         getApplicationContext().startActivity(new Intent(getApplicationContext(),reply.class));
     }
+    public void newQuery(View view){
+        getApplicationContext().startActivity(new Intent(getApplicationContext(),NewQuery.class));
+    }
 }

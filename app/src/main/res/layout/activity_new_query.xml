@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".NewQuery">
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <Button
                 android:id="@+id/record"
@@ -25,7 +15,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:text="TAp and hold to record" />
 
             <TextView
@@ -36,7 +26,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:text="Tap And Hold the button to record"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -44,39 +34,22 @@
                 android:layout_height="wrap_content"
                 android:hint="Please Fill in your query" />
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="186dp"
-            android:orientation="vertical">
-
-
-            <ImageView
+    <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
+                android:layout_weight="2"
                 android:src="@android:drawable/arrow_up_float" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="Please Upload Image "
-                android:textAlignment="center"
-                android:textSize="15dp" />
+    <Button
+        android:onClick="upldImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Upload Image" />
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="177dp"
-            android:layout_margin="15dp"
-            android:orientation="vertical">
-
-            <VideoView
+    <VideoView
                 android:id="@+id/videoView"
                 android:layout_width="match_parent"
                 android:layout_height="123dp" />
@@ -88,23 +61,11 @@
                 android:layout_margin="5dp"
                 android:text="Please Upload Video"
                 android:textAlignment="center"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+</LinearLayout>
 
 
 
 
-</RelativeLayout>
