@@ -12,7 +12,9 @@ public class Second extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
     }
-
+    public void newQuery(View view){
+        getApplicationContext().startActivity(new Intent(getApplicationContext(),NewQuery.class));
+    }
     public void Rep(View view) {
         getApplicationContext().startActivity(new Intent(getApplicationContext(),reply.class));
     }
