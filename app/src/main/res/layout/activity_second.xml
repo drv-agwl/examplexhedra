@@ -11,27 +11,76 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:id="@+id/query"
-            android:text="New Query"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/faq"
-            android:layout_margin="15dp"
-            android:text="FAQ"/>
+            <Button
+                android:id="@+id/query"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="New Query" />
 
-        <Button
-            android:onClick="Rep"
+            <ImageButton
+                android:id="@+id/queryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:srcCompat="@android:drawable/ic_menu_help" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/reply"
-            android:layout_margin="15dp"
-            android:text="Replies"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/faq"
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="FAQ" />
+
+            <ImageButton
+                android:id="@+id/faqText"
+                android:layout_margin="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_help" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/reply"
+                android:layout_width="257dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:onClick="Rep"
+                android:text="Replies" />
+
+            <ImageButton
+                android:id="@+id/replyText"
+                android:layout_margin="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_help" />
+
+        </LinearLayout>
+
+
+
+
+
+
     </LinearLayout>
 
 </RelativeLayout>
