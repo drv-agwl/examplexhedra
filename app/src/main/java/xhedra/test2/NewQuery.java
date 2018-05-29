@@ -2,14 +2,18 @@ package xhedra.test2;
 
 import android.*;
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -19,6 +23,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,8 +41,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
-public class NewQuery extends AppCompatActivity {
+public class NewQuery extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     private Button record;
     private TextView label;
@@ -55,10 +62,30 @@ public class NewQuery extends AppCompatActivity {
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
     String mCurrentImagePath ;
     Uri filePath;
+
+    private ImageButton image,video,text;
+
+    private TextToSpeech engine;
+
+    private EditText textQuery;
+    private TextView videoQuery,imageQuery;
+
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_query);
+
+        engine = new TextToSpeech(this,this);
+
+        imageQuery = (TextView)findViewById(R.id.imageupload);
+        videoQuery = (TextView)findViewById(R.id.videoupload);
+        textQuery = (EditText)findViewById(R.id.editText);
+
+        image = (ImageButton)findViewById(R.id.imageu);
+        video = (ImageButton)findViewById(R.id.videou);
+        text = (ImageButton)findViewById(R.id.textu);
+
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[] { android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE }, 0);
         }
@@ -93,6 +120,33 @@ public class NewQuery extends AppCompatActivity {
                 }
 
                 return false;
+            }
+        });
+
+        text.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View view) {
+                String text = textQuery.getText().toString();
+                speak(text);
+            }
+        });
+
+        video.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View view) {
+                String videotext = videoQuery.getText().toString();
+                speak(videotext);
+            }
+        });
+
+        image.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View view) {
+                String imageText = imageQuery.getText().toString();
+                speak(imageText);
             }
         });
         imgUpld.setOnClickListener(new View.OnClickListener() {
@@ -202,5 +256,17 @@ public class NewQuery extends AppCompatActivity {
                 filePath = Uri.fromFile(new File(mCurrentImagePath));
             }
         }
+    }
+
+    @Override
+    public void onInit(int i) {
+        if(i == TextToSpeech.SUCCESS){
+            engine.setLanguage(Locale.getDefault());
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void speak(String s){
+        engine.speak(s,TextToSpeech.QUEUE_FLUSH,null,null);
     }
 }
